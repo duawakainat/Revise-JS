@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parent">
+    </div>
+    <h1 class="contain"> What are you doing </h1>
+    <h1 class="contains"> What are you doing </h1>
+    <script>
+        // Example 1 Html in JavaScript
+        function AddHtml(text, link) {
+            var link = '<p>An absolute link : <a href="' + link + '">' + text + '</a><p>';
+            var a = document.createElement('p');
+            a.innerHTML = link;
+            return a.childNodes[0];
+        }
+        var parent = document.getElementById('parent');
+        var link = AddHtml("Google", "google.com")
+        parent.appendChild(link);
+
+        // Example 1 _1.1 Varible
+        const contain = document.querySelector('.contain');
+        contain.innerHTML = "heli How are you";
+        // Example 2
+        let b = 5;
+        let c = 4;
+        const z = b + c;
+        console.log(z + 1);
+        // Example 2 _1.1
+        let add = 5 + 8
+        console.log(add);
+        // Example 2 _1.2
+        let name = 'kainat', password = 432, age = 19;
+        document.querySelector('.contains').innerHTML = password;
+        // Example 3 Data Type
+        let x = 34 //number
+        let y = 'kaint';//string
+        let i = true;
+        let a = false;
+        let s = 34;
+        let h = (x == s)//booleans
+        console.log(h);
+
+        let obj = { //object datatype
+            name: 'kaint',
+            age: 19
+        }
+        console.log(obj.name);
+        console.log(obj.age);
+        let arr = ['kait', 12, 'ture']//Array Datatype
+        console.log(arr[2]);
+        let t = 123e5;
+        console.log(typeof (obj.name));
+        // Example 3 Operation
+        // 1 Arithmetic Operators
+        // let g = a + b;
+        // let $y = 4 ** 4
+        // console.log($y);
+        // a * g
+        // c / h
+        // a % g
+        // a++
+        // b++
+        // 2 Assignment Operators
+        // a = c
+        // a += s
+        // b -= e
+        // 3 Comparison Operators
+        // a < b
+        // v <= j
+        // h >= k
+        // h != k
+        // k == j
+
+        // Example 4 if and if else
+        let hour = new Date().getHours();
+        if (hour < 10) {//if
+            console.log('night ');
+        }
+        if (hour < 10) {//if else
+            console.log('night ');
+        } else {
+            console.log('day');
+        }
+        //Javascript functions with parameters or with return value
+        function addPara(a, b) {
+            let c = a + b;
+            console.log('The sum of ' + a + ' and ' + b + ' is ' + c);
+        } addPara(99, 4)
+        // Javascript local or global variables
+        let p = 10;//Global variable
+        function Global() {
+            const ru = 34;//local variable
+        }
+        // Javascript loops
+        // for loop 
+        let array = [1, 2, 3, 4, 5]
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index];
+            console.log(element);
+        }
+        // while loop
+        let r = 0;
+        while (i < 5) {
+            console.log(i);
+            i++
+        }
+        let f = 0
+        do {
+
+            console.log(f);
+            f++
+        } while (f < 9);
+
+        // Javascript find even or odd Numbers with loop
+        for (let g = 1; g < 100; g++) {
+            const div = g;
+            // console.log(div);
+            if (g % 2 === 0) {
+                console.log(g, 'even');
+            }
+            else { console.log(g, 'odd'); }
+        }
+        // Javascript nested loop
+        function arrs(params) {
+            for (let s = 0; s < params.length; s++) {
+                for (let w = 0; w < params[s].length; w++) {
+                    console.log(params[w][s])
+                    // console.log(element);
+
+                }
+
+            }
+        } arrs([[2, 3], [1, 2, 4], [8, 9, 7]])
+        // Javascript break or continue statement
+        var content = "";
+        var v;
+        for (v = 1; v < 1000; v++) {
+            if (v === 6) {
+                break;
+            }
+            console.log("Geeks" + v);
+        }
+        var u;
+        for (u = 1; u < 7; u++) {
+            if (u === 4) {
+                continue;
+            }
+            console.log("Geeks" + u);
+        }
+        // avascript create arrays with multidimensional arrays
+        var Employee = Array(
+            [20, 'Pranshu', 'Lucknow'],
+            [21, 'Sameer', 'Vanaras'],
+            [22, 'Kartikey', 'Lakhimpur']
+        )
+        // Javascript forEach loop
+        let arrFor = [2, 3, 4, 5, 5, , 6, 7, 7]
+        arrFor.forEach((element) => console.log(element))
+
+        const items = ["item1", "item2", "item3"];
+        const copyItems = [];
+        items.forEach((items) => {
+            copyItems.push(items)
+            console.log(copyItems);
+        });
+        // Javascript objects
+        let person = {
+            name: 'kainat',
+            age: 19,
+            class: '13',
+
+        }
+        console.log(person.class);
+        // Javascript objects with arrays
+        let Course = [{
+            name: 'kainat',
+            City: 'fsd',
+            subject: 'SWE'
+        }, {
+            name: 'aimen',
+            City: 'fsd',
+            subject: 'Math'
+        }]
+        console.log(Course[0]);
+        // Javascript Map Method
+        let arrrMap = [2, 5, 7]
+        let MaP = arrrMap.map((x) => x * 2)
+        console.log(MaP);
+        // Javascript string Methods
+        let w = 'googleom';
+        let lenght = w.lenght
+        let capl = w.toUpperCase();
+        let Lovl = w.toLowerCase();
+        let trim = w.trim()
+        console.log(trim);
+        console.log(lenght);
+        // Javascript Date Method
+        let Dat = new Date()
+        console.log(Dat.getDate());
+
+    </script>
+</body>
+
+</html>
