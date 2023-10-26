@@ -5,6 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .Button {
+            padding: 30px;
+            background-color: rgb(184, 125, 66);
+            font-size: 13px;
+            color: aliceblue;
+            transition: all .8s ease-in-out;
+            border: none;
+        }
+
+        .Parashow {
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 400 !important;
+            transition: all 1s ease-in-out;
+            color: #765893;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,7 +30,125 @@
     </div>
     <h1 class="contain"> What are you doing </h1>
     <h1 class="contains"> What are you doing </h1>
+    <h1 class="Text"></h1>
+    <button type="button" onclick="this.innerHTML='hello I am'" class="Button">Click me</button>
+    <button type="button" onmouseover="OnColor(this)" class="Button">Hover Me</button>
+    <button type="button" onclick="colorCGange()" class="Button Button2">click</button>
+    <button type="button" onclick="changeText()" class="Button Button2  Button3">click For Loop</button>
+    <button type="button" onclick="UpperCase()" class="Button Button2  Button3 Button3">Day Find</button>
+    <button type="button" onclick="ArraryShow()" class="Button Button2  Button3 Button4">Object Case</button>
+    <button type="button" onclick="MapSqr()" class="Button Button2  Button3 Button4">Map Squaring</button>
+    <button type="button" onclick="PushEle()" class="Button Button2  Button3 Button4">Push Loop</button>
+    <button type="button" onclick="UpperCaseALL()" class="Button Button2  Button3 Button4">Nested Loop</button>
+    <h1 class="Parashow1"></h1>
+    <p class="Parashow"></p>
+    <h1 class="Parashow2"></h1><br>
+    <h1 class="Parashow3">2, 5, 7,0,6,7,8,8,9,6,6,6</h1><br>
+    <h1 class="Parashow4">Now A day</h1><br>
+    <h1 class="Parashow5"></h1><br>
+    <input type="text" class="input_btn">
+    <button onclick="NumberDiv()">sunbit</button>
+    <h1 class="Parashow4"></h1><br>
     <script>
+        function UpperCaseALL() {
+            function arrs(params) {
+                for (let s = 0; s < params.length; s++) {
+                    for (let w = 0; w < params[s].length; w++) {
+                        let err = params[w]
+                        document.querySelector('.Parashow1').innerHTML = err
+
+                    }
+
+                }
+            } arrs([[2, 3], [1, 2, 4], [8, 9, 7]])
+        }
+        // Javascript push loop
+        function PushEle(params) {
+
+            let arrFor = [2, 3, 4, 5, 5, , 6, 7, 7]
+            arrFor.forEach((element) => console.log(element))
+
+            const items = ["item1", "item2", "item3"];
+            const copyItems = [];
+            items.forEach((items) => {
+                copyItems.push(items)
+                document.querySelector('.Parashow5').innerHTML = copyItems
+                console.log(copyItems);
+            });
+        }
+        // 
+        function UpperCase() {
+            let hour = new Date().getHours();
+            if (hour < 10) {//if
+                document.querySelector('.Parashow5').innerHTML = "Day"
+                console.log('night ');
+            }
+            if (hour < 10) {//if else
+                document.querySelector('.Parashow5').innerHTML = "Night"
+
+                console.log('night ');
+            }
+        }
+        // 
+        function MapSqr() {
+            let arrrMap = [2, 5, 7, 0, 6, 7, 8, 8, 9, 3, 2, 1]
+
+            let MaP = arrrMap.map((x) => x * 2)
+            document.querySelector('.Parashow3').innerHTML = MaP
+            // console.log(MaP);
+
+        }
+        // 
+        function NumberDiv() {
+            // for (let g = 1; g < 100; g++) {
+            //     const div = g;
+            // console.log(div);
+            let input = document.querySelector('.input_btn');
+            console.log(input);
+            if (input.value % 2 === 0) {
+                document.querySelector('.Parashow4').innerHTML = `${input.value}, 'is even'`
+            }
+            else {
+                document.querySelector('.Parashow4').innerHTML = `${input.value}, 'is old'`
+            }
+        }
+
+        // }
+        // avascript create arrays with multidimensional arrays
+        function ArraryShow() {
+
+            var Employee = Array(
+                [20, 'Pranshu', 'Lucknow'],
+                [21, 'Sameer', 'Vanaras'],
+                [22, 'Kartikey', 'Lakhimpur']
+            )
+            document.querySelector('.Button4').style.backgroundColor = 'yello'
+            document.querySelector('.Parashow2').innerHTML = Employee
+        }
+
+
+        let Button3 = document.querySelector('.Button3')
+        function changeText() {
+            let r = ''
+            for (let i = 0; i < 10; i++) {
+
+                r = r + 'The Element is ' + i + "<br>"
+                document.querySelector('.Parashow').innerHTML = r;
+            }
+        }
+        let Button = document.querySelector('.Button').innerHTML = "click me"
+        let Text = document.querySelector('.Text')
+        function OnColor(obj) {
+            obj.innerHTML = "Hover Me NOT"
+            Text.innerHTML = "I Am Mouse Over On button"
+            Text.style.color = 'green'
+        }
+        function colorCGange() {
+            let buton2 = document.querySelector('.Button2')
+            buton2.style.backgroundColor = 'gray'
+            Button.style.BackgroundColor = 'red'
+        }
+
         // Example 1 Html in JavaScript
         function AddHtml(text, link) {
             var link = '<p>An absolute link : <a href="' + link + '">' + text + '</a><p>';
@@ -79,15 +215,7 @@
         // k == j
 
         // Example 4 if and if else
-        let hour = new Date().getHours();
-        if (hour < 10) {//if
-            console.log('night ');
-        }
-        if (hour < 10) {//if else
-            console.log('night ');
-        } else {
-            console.log('day');
-        }
+
         //Javascript functions with parameters or with return value
         function addPara(a, b) {
             let c = a + b;
@@ -119,25 +247,9 @@
         } while (f < 9);
 
         // Javascript find even or odd Numbers with loop
-        for (let g = 1; g < 100; g++) {
-            const div = g;
-            // console.log(div);
-            if (g % 2 === 0) {
-                console.log(g, 'even');
-            }
-            else { console.log(g, 'odd'); }
-        }
+
         // Javascript nested loop
-        function arrs(params) {
-            for (let s = 0; s < params.length; s++) {
-                for (let w = 0; w < params[s].length; w++) {
-                    console.log(params[w][s])
-                    // console.log(element);
 
-                }
-
-            }
-        } arrs([[2, 3], [1, 2, 4], [8, 9, 7]])
         // Javascript break or continue statement
         var content = "";
         var v;
@@ -154,22 +266,7 @@
             }
             console.log("Geeks" + u);
         }
-        // avascript create arrays with multidimensional arrays
-        var Employee = Array(
-            [20, 'Pranshu', 'Lucknow'],
-            [21, 'Sameer', 'Vanaras'],
-            [22, 'Kartikey', 'Lakhimpur']
-        )
-        // Javascript forEach loop
-        let arrFor = [2, 3, 4, 5, 5, , 6, 7, 7]
-        arrFor.forEach((element) => console.log(element))
 
-        const items = ["item1", "item2", "item3"];
-        const copyItems = [];
-        items.forEach((items) => {
-            copyItems.push(items)
-            console.log(copyItems);
-        });
         // Javascript objects
         let person = {
             name: 'kainat',
@@ -190,9 +287,7 @@
         }]
         console.log(Course[0]);
         // Javascript Map Method
-        let arrrMap = [2, 5, 7]
-        let MaP = arrrMap.map((x) => x * 2)
-        console.log(MaP);
+
         // Javascript string Methods
         let w = 'googleom';
         let lenght = w.lenght
